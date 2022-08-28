@@ -1,26 +1,30 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "npm",
-			"script": "watch",
-			"problemMatcher": {
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "watch",
+      "problemMatcher": {
         "base": "$gulp-tsc",
-				"applyTo": "closedDocuments",
-				"background": {
-					"beginsPattern": "Starting",
-					"endsPattern": "Finished"
-				}
-			},
+        "applyTo": "closedDocuments",
+        "background": {
+          "beginsPattern": "Starting",
+          "endsPattern": "Finished"
+        }
+      },
       "isBackground": true,
-      // https://github.com/microsoft/vscode/issues/83016
-			// "presentation": {
-			// 	"reveal": "never"
-			// },
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		}
-	]
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "compile",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: compile",
+      "detail": "gulp"
+    }
+  ]
 }
